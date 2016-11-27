@@ -25,6 +25,7 @@ class DeviceController extends Controller
         }, $this->scenarios[$code]);
 
         exec(sprintf('python %s/../send.py %s', $this->getParameter('kernel.root_dir'), implode(' ', $codes)));
+
         return new JsonResponse();
     }
 }
